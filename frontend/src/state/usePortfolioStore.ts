@@ -35,9 +35,9 @@ export const usePortfolioStore = create<FiatState>((set, get) => ({
 
         try {
             const portfolio = await PortfolioService.getPortfolio();
-            set(() => ({ coins: portfolio, error: null }));
+            set(() => ({ portfolio: portfolio, error: null }));
         } catch (e) {
-            set(() => ({ coins: [], error: 'Oops something went wrong' }));
+            set(() => ({ portfolio: [], error: 'Oops something went wrong' }));
         }
 
         set(() => ({ isLoading: false }));
