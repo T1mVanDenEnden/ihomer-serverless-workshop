@@ -4,13 +4,13 @@
 
 ### Node
 
-Make sure you have installed a version of Node 14. Node can be installed via: https://nodejs.org/en/download/
+Make sure you have installed a version of Node 16. Node can be installed via: https://nodejs.org/en/download/
 
 ### Serverless
 
 After installing Node we should install the serverless framework. This can be done by
 running `npm install -g serverless`. You can check if the installation was successful by running `sls -v`. Any version
-above `2.30.0` should be fine.
+above `3.0.0` should be fine.
 
 ### Docker
 
@@ -96,7 +96,7 @@ UNIQUE_ID='<<insert your uniqueId>>'
 
 To run the serverless application, install all project dependencies with the `npm install` command, from inside the `sls` directory. Then, run `sls offline start`. This will start the serverless backend locally and it will mock the AWS services we are using. You will notice that the program will emit logs. Why this is happening, will become clear in the next step.
 
-NOTE: If you are using Powershell, the `sls` command might not work. Use `serverless` instead.
+_NOTE: If you are using Powershell, the `sls` command might not work. Use `serverless` instead._
 
 #### Running the frontend
 
