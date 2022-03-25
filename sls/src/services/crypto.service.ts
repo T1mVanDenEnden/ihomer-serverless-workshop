@@ -27,7 +27,7 @@ export class CryptoService {
         }
     }
 
-    static async buyCoin(coinOrder: CoinOrder): Promise<any> {
+    static async buyCoin(coinOrder: CoinOrder): Promise<{ message: string, cost: number }> {
         try {
             return (
                 await axios.post(BASE_URL + '/coins/buy', coinOrder)
@@ -38,7 +38,7 @@ export class CryptoService {
         }
     }
 
-    static async sellCoin(coinOrder: CoinOrder): Promise<any> {
+    static async sellCoin(coinOrder: CoinOrder): Promise<{ message: string, amount: number, price: number, walletFiat: number }> {
         try {
             return (
                 await axios.post(BASE_URL + '/coins/sell', coinOrder)
@@ -49,7 +49,7 @@ export class CryptoService {
         }
     }
 
-    static async depositBalance(amount: number): Promise<number> {
+    static async depositBalance(amount: number): Promise<{ message: string }> {
         try {
             return (
                 await axios.put(BASE_URL + '/fiat/deposit', {
