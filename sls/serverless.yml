@@ -19,6 +19,41 @@ functions:
             -   http:
                     path: /api/coins
                     method: get
+
+    depositFiat:
+        handler: src/handlers/depositFiat.handler
+        events:
+            -   http:
+                    path: /api/fiat/deposit
+                    method: PUT
+
+    readingFiat:
+        handler: src/handlers/readingFiat.handler
+        events:
+            -   http:
+                    path: /api/fiat
+                    method: GET
+
+    buyCoins:
+        handler: src/handlers/buyCoins.handler
+        events:
+            -   http:
+                    path: /api/portfolio/buy
+                    method: PUT
+
+    sellCoins:
+        handler: src/handlers/sellCoins.handler
+        events:
+            -   http:
+                    path: /api/portfolio/sell
+                    method: PUT
+
+    portfolio:
+        handler: src/handlers/portfolio.handler
+        events:
+            -   http:
+                    path: /api/portfolio
+                    method: GET
 plugins:
     - serverless-offline
     - serverless-plugin-typescript
